@@ -1,6 +1,7 @@
 package com.devsuperior.sdsdeliver.services;
 
 import java.util.List;
+
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +16,11 @@ import com.devsuperior.sdsdeliver.repositories.ProductRepository;
 public class ProductService {
 
 	@Autowired
-	private ProductRepository repository;
+	private ProductRepository repository;		//Injecao de dependencia:
 	
 	@Transactional(readOnly = true)
 	public List<ProductDTO> findAll() {
 		List<Product> list = repository.findAllByOrderByNameAsc();	
 		return list.stream().map(x -> new ProductDTO(x)).collect(Collectors.toList());
 	}
-	
 }

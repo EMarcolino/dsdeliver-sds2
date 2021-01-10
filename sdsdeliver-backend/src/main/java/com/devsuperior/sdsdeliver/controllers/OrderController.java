@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devsuperior.sdsdeliver.dto.ProductDTO;
-import com.devsuperior.sdsdeliver.services.ProductService;
+import com.devsuperior.sdsdeliver.dto.OrderDTO;
+import com.devsuperior.sdsdeliver.services.OrderService;
 
 @RestController
-@RequestMapping(value = "/products")
-public class ProductController {
+@RequestMapping(value = "/orders")
+public class OrderController {
 	
 	@Autowired
-	private ProductService service;			//Injecao de dependencia: A class Controller esta recebendo a class Service.
+	private OrderService service;				//Injecao de dependencia:
 	
 	@GetMapping
-	public ResponseEntity<List<ProductDTO>> findAll() {
-		List<ProductDTO> list =  service.findAll();
+	public ResponseEntity<List<OrderDTO>> findAll() {
+		List<OrderDTO> list =  service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 }

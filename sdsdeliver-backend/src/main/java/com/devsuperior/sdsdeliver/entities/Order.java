@@ -58,12 +58,12 @@ public class Order implements Serializable {
 		this.id = id;
 	}
 
-	public String getAddrress() {
+	public String getAddress() {
 		return address;
 	}
 
-	public void setAddrress(String addrress) {
-		this.address = addrress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public Double getLatitude() {

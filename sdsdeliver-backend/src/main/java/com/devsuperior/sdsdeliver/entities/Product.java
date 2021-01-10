@@ -23,7 +23,6 @@ public class Product implements Serializable {
 	private String imageUri;
 	
 	public Product () {
-		
 	}
 
 	public Product(Long id, String name, Double price, String description, String imageUri) {
@@ -99,5 +98,4 @@ public class Product implements Serializable {
 			return false;
 		return true;
 	}
-	
 }
